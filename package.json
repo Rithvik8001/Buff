@@ -1,0 +1,12 @@
+{
+  "name": "buff",
+  "scripts": {
+    "dev": "pnpm --parallel -r dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint"
+  },
+  "devDependencies": {
+    "eslint": "^10.9.1",
+    "typescript": "^7.0.2"
+  }
+}
