@@ -4,3 +4,6 @@ packages:
 allowBuilds:
   bcrypt: true
   esbuild: true
+minimumReleaseAgeExclude:
+  - '@libsql/client@0.18.0'
+  - '@libsql/core@0.18.0'
