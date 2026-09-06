@@ -18,3 +18,4 @@ function requireEnvNumber(key: string): number {
 export const PORT = requireEnvNumber("PORT");
 export const CLIENT_URL = requireEnv("CLIENT_URL");
 export const DATABASE_FILE_NAME = requireEnv("DATABASE_FILE_NAME");
+export const NODE_ENV = requireEnv("NODE_ENV");
