@@ -9,6 +9,7 @@ import { prettyJSON } from "hono/pretty-json";
 import { ApiResponse } from "./utils/api-response";
 import { ApiError } from "./utils/api-error";
 import { HTTPException } from "hono/http-exception";
+import authRouter from "./routes/auth/route";
 
 const app = new Hono();
 
@@ -31,6 +32,8 @@ if (NODE_ENV === "development") {
 }
 
 await dbConnection();
+
+app.route(`/api/v1`, authRouter);
 
 app.notFound((c) =>
   c.json(new ApiResponse(404, false, "Route not found"), 404),
