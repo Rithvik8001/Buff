@@ -1,4 +1,3 @@
-import type { Context } from "hono";
 import bcrypt from "bcrypt";
 import { db } from "../../database/config/connection";
 import { usersTable } from "../../database/models/user";
@@ -6,14 +5,9 @@ import { SALT_ROUNDS } from "../../utils/env";
 import { ApiError } from "../../utils/api-error";
 import { ApiResponse } from "../../utils/api-response";
 import type { signupData } from "../../validations/auth/signup";
+import { ValidatedContext } from "../../types/app-env";
 
-type SignupContext = Context<
-  Record<string, never>,
-  string,
-  { out: { json: signupData } }
->;
-
-export const signupHandler = async (c: SignupContext) => {
+export const signupHandler = async (c: ValidatedContext<signupData>) => {
   const { userName, email, password } = c.req.valid(`json`);
 
   const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);

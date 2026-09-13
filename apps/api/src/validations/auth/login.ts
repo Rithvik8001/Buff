@@ -16,4 +16,4 @@ export const loginSchema = z
   })
   .strict();
 
-export type loginInput = z.infer<typeof loginSchema>;
+export type loginData = z.infer<typeof loginSchema>;
