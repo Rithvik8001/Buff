@@ -9,7 +9,7 @@ import { prettyJSON } from "hono/pretty-json";
 import { ApiResponse } from "./utils/api-response";
 import { ApiError } from "./utils/api-error";
 import { HTTPException } from "hono/http-exception";
-import authRouter from "./routes/auth/route";
+import authRouter from "./routes/auth/auth.route";
 
 const app = new Hono();
 
